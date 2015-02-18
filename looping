@@ -1,0 +1,39 @@
+// Looping, mapping, slices
+package main
+
+import "fmt"
+
+func main() {
+	i := 1
+	for i < 20 {
+		if i >= 31 {
+			break
+		}
+		if i%2 == 1 {
+			i++
+			continue
+		}
+		fmt.Println(i)
+		i++
+	}
+
+	// slice
+	mySlice := []string{"Ryan", "Alexis"}
+	myOtherSlice := []string{"Isis"}
+	mySlice = append(mySlice, myOtherSlice...)
+	for _, currentEntry := range mySlice {
+		fmt.Println(currentEntry)
+	}
+
+	// mapping
+	myGreeting := map[string]string{
+		"Jim":       "Good morning!",
+		"Goerge":    "Good afternoon",
+		"Melanie":   "Good night",
+		"Nathan":    "Whats up",
+		"Jules":     "How are you?",
+		"Stephanie": "Hi",
+		"Mike":      "Howdy",
+	}
+	fmt.Println(myGreeting["Mike"])
+}
